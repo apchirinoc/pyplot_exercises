@@ -1,1 +1,1 @@
-# pyplot_exercises
+# Pyplot Exercises
