@@ -12,11 +12,11 @@ class RandomWalk:
         self.x_values = [0]
         self.y_values = [0]
 
-    def get_step(self):
+    def get_step(self, step_range: int):
         """Calculate the direction and distance of the following step."""
 
         direction = choice([1, -1])
-        distance = choice(range(9))
+        distance = choice(range(step_range + 1))
         step = direction * distance
 
         return step
@@ -28,8 +28,8 @@ class RandomWalk:
         while len(self.x_values) < self.num_points:
 
             # Decide which directions to go and how far to go in that direction
-            x_step = self.get_step()
-            y_step = self.get_step()
+            x_step = self.get_step(8)
+            y_step = self.get_step(8)
 
             # Reject moves that go nowhere
             if x_step == 0 and y_step == 0:
