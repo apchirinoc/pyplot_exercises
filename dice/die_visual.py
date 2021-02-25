@@ -3,6 +3,7 @@ from plotly import offline
 
 from die import Die
 
+
 def main():
     # Create a D6.
     die = Die()
