@@ -41,7 +41,7 @@ def d8():
     die_2 = Die(8)
 
     # Make some rolls, and store results in a list
-    results = roll_two_dice(die_1, die_2, 1000)
+    results = roll_dice([die_1, die_2], 1000)
 
     # Visualize the results.
     max_result = die_1.num_sides + die_2.num_sides
@@ -61,17 +61,20 @@ def d8():
 
 
 
-def roll_two_dice(die_1: Die, die_2: Die, rolls: int = 1) -> list:
+def roll_dice(dice_list: List[Die], rolls: int = 1) -> list:
     results = []
     for roll_num in range(rolls):
-        result = die_1.roll() + die_2.roll()
+        result = 0
+        for die in dice_list:
+            result += die.roll()
+
         results.append(result)
 
     return results
 
 
 def main():
-    d6_d10()
+    #d6_d10()
     d8()
 
 
